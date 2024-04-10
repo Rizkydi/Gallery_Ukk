@@ -194,8 +194,8 @@
                 <div class="user-info">
                     <img src="assets/images/gw.jpg" class="user-dp" alt="">
                     <div class="info-container">
-                        <h1>IkySukses2024</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, distinctio sit doloribu.</p>
+                        <h1>{{ Auth::user()->name }}</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti, distinctio sit doloribu.</p>{{-- buat deskripsi si user ( bisa di edit) --}}
                     </div>
                 </div>
                 <h1 class="suggestions-heading">Suggestions</h1>
