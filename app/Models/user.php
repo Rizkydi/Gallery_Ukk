@@ -32,7 +32,18 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
+    public function fotos()
+    {
+        return $this->hasMany(Foto::class);
+    }
+    public function likes()
+    {
+        return $this->hasMany(like_foto::class);
+    }
+    public function albums()
+    {
+        return $this->hasMany(album::class);
+    }
     /**
      * The attributes that should be cast.
      *

@@ -1,3 +1,10 @@
+//scroll down profile 
+let subMenu = document.getElementById("subMenu");
+
+function toggleMenu(){
+  subMenu.classList.toggle("open-menu");
+}
+
 // open likes list
 let heartIcon = document.querySelector(".heart-icon");
 let activityContainer = document.querySelector(".activity-container");
@@ -6,27 +13,27 @@ heartIcon.addEventListener("click",() =>{
       heartIcon.classList.toggle("bxs-heart")
 });
 //=============================================================================
-function likePost(post){
-    let likeBtn = post.querySelector(".like-icon"); 
-    let likeImg = post.querySelector(".post-overlays");
-    let likeCount = post.querySelector(".likes span");
-    let shareWindow = post.querySelector(".share-window");
-    likeBtn.addEventListener("click",() =>{
-         likeBtn.classList.toggle("bxs-heart");
-         likeImg.classList.add("show");
-         likeCount.innerHTML = parseInt(likeCount.innerHTML) + 1;
-         setTimeout( () =>{
-            likeImg.classList.remove("show");
-         },2000)
-          if(!likeBtn.classList.contains("bxs-heart")){
-              likeImg.classList.remove("show");
-              likeCount.innerHTML = parseInt(likeCount.innerHTML) - 2;
-          }
-          if(likeImg.classList.contains("show")){
-            shareWindow.classList.remove("active");
-          }
-    });
-}
+// function likePost(post){
+//     let likeBtn = post.querySelector(".like-icon"); 
+//     let likeImg = post.querySelector(".post-overlays");
+//     let likeCount = post.querySelector(".likes span");
+//     let shareWindow = post.querySelector(".share-window");
+//     likeBtn.addEventListener("click",() =>{
+//          likeBtn.classList.toggle("bxs-heart");
+//          likeImg.classList.add("show");
+//          likeCount.innerHTML = parseInt(likeCount.innerHTML) + 1;
+//          setTimeout( () =>{
+//             likeImg.classList.remove("show");
+//          },2000)
+//           if(!likeBtn.classList.contains("bxs-heart")){
+//               likeImg.classList.remove("show");
+//               likeCount.innerHTML = parseInt(likeCount.innerHTML) - 2;
+//           }
+//           if(likeImg.classList.contains("show")){
+//             shareWindow.classList.remove("active");
+//           }
+//     });
+// }
 function sharePost(post){
     let shareBtn = post.querySelector(".share-icon");
     let shareWindow = post.querySelector(".share-window");
@@ -61,14 +68,7 @@ function addComment(post){
 });
 }
 function createComment(comment){
-    return `<div class="comments">
-             <img src="images/user1.png" alt="">
-             <p class="comment-content">${comment}</p>
-             <div>
-             <i class="bx bx-heart like-comment"></i>
-             <i class="bx bxs-trash-alt delete-comment"></i>
-             </div>
-            </div>
+    return `
            `
 }
 function removeComment(commentsContainer,commentCount){
@@ -186,26 +186,26 @@ let postContainer = document.querySelector(".post-container");
 let chooseMedia = document.querySelector(".choose-media");
 let postImg = document.querySelector(".post-img-container img");
 
-postIcon.addEventListener("click", () =>{
-    postIcon.classList.toggle("bxs-plus-circle");
-    postCrt.classList.toggle("hide");
-});
-let imgUrl ;
-chooseMedia.onchange = () =>{
-        let postImgUrl =  URL.createObjectURL(chooseMedia.files[0]);
-        imgUrl = postImgUrl ;
-};
-postBtn.onclick =  () =>{
-    if(!postInput.value){
-        return ;
-    }
-    let newNode = document.createElement("div");
-    newNode.innerHTML = createPost(postInput.value,imgUrl);
-    postContainer.prepend(newNode);
-    addIntersectionPost(newNode);
-    postInput.value = "" ;
-    imgUrl = "" ;
-}
+// postIcon.addEventListener("click", () =>{
+//     postIcon.classList.toggle("bxs-plus-circle");
+//     postCrt.classList.toggle("hide");
+// });
+// let imgUrl ;
+// chooseMedia.onchange = () =>{
+//         let postImgUrl =  URL.createObjectURL(chooseMedia.files[0]);
+//         imgUrl = postImgUrl ;
+// };
+// postBtn.onclick =  () =>{
+//     if(!postInput.value){
+//         return ;
+//     }
+//     let newNode = document.createElement("div");
+//     newNode.innerHTML = createPost(postInput.value,imgUrl);
+//     postContainer.prepend(newNode);
+//     addIntersectionPost(newNode);
+//     postInput.value = "" ;
+//     imgUrl = "" ;
+// }
 
-let posts = document.querySelectorAll(".post");
-posts.forEach( (post) => addIntersectionPost(post));
+// let posts = document.querySelectorAll(".post");
+// posts.forEach( (post) => addIntersectionPost(post));

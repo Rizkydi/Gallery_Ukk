@@ -109,7 +109,7 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form action="/loginprocess" method="post" role="form">
+                  <form action="{{ route('loginprocess') }}" method="post" role="form">
                     @csrf
                     <label>Email</label>
                     <div class="mb-3">
@@ -131,7 +131,7 @@
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                     Don't have an account?
-                    <a href="/register" class="text-info text-gradient font-weight-bold">Sign up</a>
+                    <a href="{{ route('register') }}" class="text-info text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </div>
               </div>

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use laravolt\Avatar\Facade as Avatar;
 
 
 class AuthController extends Controller
@@ -25,13 +26,20 @@ class AuthController extends Controller
     }
 
     public function registeruser(Request $request){
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
         ]);
+        // Avatar::create($request->name)->save(storage_path('app/public/avatar-' . $user->id . '.png'));
+        Auth::login($user);
 
+        return redirect('/home');
+    }
+
+    public function logout(){
+        Auth::logout();
         return redirect('/');
     }
 }

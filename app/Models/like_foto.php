@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class like_foto extends Model
 {
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function foto()
+    {
+        return $this->belongsTo(Foto::class);
+    }
 }

@@ -1,0 +1,144 @@
+* {
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: PLz;
+}
+.heading {
+  margin-bottom: 10vh;
+}
+nav img {
+  height: 100px;
+  position: absolute;
+  left: 10px;
+  top: 1px;
+}
+
+main {
+  margin-top: 15dvh;
+  height: 100%;
+  margin: 6% 30%;
+  max-width: 600px;
+}
+
+main h2 {
+  font-weight: 400;
+}
+main p {
+  color: grey;
+}
+
+.avatar {
+  display: flex;
+  gap: 2rem;
+}
+#Profile-pic{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.choose-image {
+  margin-top: 30%;
+  margin-bottom: 10%;
+}
+.choose-image label {
+  height: 40px;
+  padding: 10px;
+  border: 1px solid rgb(203, 203, 203);
+  border-radius: 4px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.choose-image input[type=file]{
+  display: none;
+}
+.default {
+  border: none;
+  background-color: white;
+  color: grey;
+  cursor: pointer;
+  font-family: PLz;
+  font-size: 16px;
+}
+.buttons {
+  align-items: center;
+  padding-top: 1rem;
+}
+.location {
+  max-width: 100%;
+}
+#location {
+  width: 90%;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: rgb(203, 203, 203);
+}
+
+button[type="submit"] {
+  margin-top: 2rem;
+  height: 40px;
+  width: 200px;
+  border: none;
+  background-color: #ea4b8b;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:disabled{
+  background-color: #f8b8d0;
+  cursor: not-allowed;
+}
+.button-text :nth-child(2){
+  cursor: pointer;
+  text-decoration: none;
+}
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+  background: #e2e2e2; /* Background color added */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  width: 80%; /* Set the width as a percentage of the viewport width */
+  max-width: 600px; /* Maximum width for responsiveness */
+  height: 80%; /* Set the height as a percentage of the viewport height */
+  max-height: 80%; /* Maximum height for responsiveness */
+  overflow: auto; /* Enable scrolling for small screens */
+  text-align: center; /* Center the content horizontally */
+  transition: all 0.4s ease; /* Smooth transition for all properties */
+}
+
+#popup img {
+  max-width: 100%; /* Adjust the maximum width of the images to fit the popup */
+  height: auto; /* Allow the height to adjust proportionally based on the width */
+  margin: 5px;
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px; /* Increase the font size of the close button for better visibility */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+#popup.open {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1); /* Scale set to 1 for open state */
+}
+
+
+@media screen and (max-width: 950px) {
+  .avatar{
+    flex-direction: column;
+  }
+}
